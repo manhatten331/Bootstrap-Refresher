@@ -4,3 +4,6 @@ body{
 .bx{
     box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.3);
 }
+#logoutbtn{
+    margin-left: 15px;
+}
