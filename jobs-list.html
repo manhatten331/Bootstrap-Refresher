@@ -46,27 +46,39 @@
         <div class="row m-4">
             <div class="col-lg-3 col-md-3">
                 <div class="list-group small">
-                    <div class="list-group-item text-light bg-dark">Employee Data</div>
-                    <a href="#" class="list-group-item" data-bs-toggle="modal" data-bs-target="#add_employee">Add Employees</a>
-                    <a href="employee-list.html" class="list-group-item">View all Employees</a>
+                    <div class="list-group-item text-light bg-dark">Jobs Data</div>
+                    <a href="#" class="list-group-item" data-bs-toggle="modal" data-bs-target="#add_job">Add New Job</a>
+                    <a href="jobs-list.html" class="list-group-item">View all Jobs</a>
                 </div>
             </div>
             <div class="col-lg-9 col-md-9">
                 <table class="table table-dark table-striped small">
                     <tr>
                         <td>ID</td>
-                        <td>Name</td>
-                        <td>Email ID</td>
+                        <td>Job Name</td>
                         <td>Details</td>
                         <td>Edit</td>
                         <td>Delete</td>
                     </tr>
                     <tr>
                         <td>347</td>
-                        <td>Manzell Hatten</td>
-                        <td>manhatten@xyzcompany</td>
-                        <td><a href="#" class="btn btn-primary btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#employee_details">Details</a></td>
-                        <td><a href="#" class="btn btn-warning btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#employee_edit_details">Edit</a></td>
+                        <td>Software Engineer</td>
+                        <td><a href="#" class="btn btn-primary btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#job_details">Details</a></td>
+                        <td><a href="#" class="btn btn-warning btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#job_edit_details">Edit</a></td>
+                        <td><a href="#" class="btn btn-danger btn-sm d-grid gap-2" onclick="confirm('Are you sure you want to delete?')">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>437</td>
+                        <td>Full-Stack Web Developer</td>
+                        <td><a href="#" class="btn btn-primary btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#job_details">Details</a></td>
+                        <td><a href="#" class="btn btn-warning btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#job_edit_details">Edit</a></td>
+                        <td><a href="#" class="btn btn-danger btn-sm d-grid gap-2" onclick="confirm('Are you sure you want to delete?')">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>743</td>
+                        <td>Data Scientist</td>
+                        <td><a href="#" class="btn btn-primary btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#job_details">Details</a></td>
+                        <td><a href="#" class="btn btn-warning btn-sm d-grid gap-2" data-bs-toggle="modal" data-bs-target="#job_edit_details">Edit</a></td>
                         <td><a href="#" class="btn btn-danger btn-sm d-grid gap-2" onclick="confirm('Are you sure you want to delete?')">Delete</a></td>
                     </tr>
                 </table>
@@ -75,12 +87,12 @@
     </div>
     <!-- dashboard -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="add_employee" tabindex="-1" aria-labelledby="add_employee" aria-hidden="true">
+    <!-- Add Job Modal -->
+    <div class="modal fade" id="add_job" tabindex="-1" aria-labelledby="add_job" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="add_employee">Add Employee Details</h5>
+            <h5 class="modal-title" id="add_job">Add Employee Details</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -90,41 +102,23 @@
                         <input type="date" class="form-control form-control-sm" required>
                     </div>
                     <div class="mb-2">
-                        <label for="employeeID" class="form-label">Employee ID:</label>
-                        <input type="text" class="form-control form-control-sm" id="employeeID" aria-describedby="employeeIDHelp">
-                    </div>
-                    <div class="mb-2">
-                        <label for="name" class="form-label">Employee Name:</label>
+                        <label for="name" class="form-label">Job Name:</label>
                         <input type="name" class="form-control form-control-sm" id="employeeName" required>
                     </div>
-                    <div class="mb-2">
-                        <label for="employeeEmaill" class="form-label">Email address:</label>
-                        <input type="email" class="form-control form-control-sm" id="employeeEmail" aria-describedby="employeeEmailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Select Job:</label>
-                        <select class="form-control form-control-sm">
-                            <option value="Graphic Designer">Graphic Designer</option>
-                            <option value="Web Developer">Web Developer</option>
-                            <option value="Software Engineer">Software Engineer</option>
-                            <option value="Data Scientist">Data Scientist</option>
-                            <option value="Full Stack Developer">Full Stack Developer</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Add New Job</button>
                 </form>
             </div>
         </div>
         </div>
     </div>
-    <!-- Modal -->
+    <!-- Add Job Modal -->
 
-    <!-- Employee Details -->
-    <div class="modal fade" id="employee_details" tabindex="-1" aria-labelledby="employee_details" aria-hidden="true">
+    <!-- Job Details -->
+    <div class="modal fade" id="job_details" tabindex="-1" aria-labelledby="job_details" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="employee_details">Employee Details</h5>
+            <h5 class="modal-title" id="job_details">Employee Details</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -134,23 +128,11 @@
                         <td>347</td>
                     </tr>
                     <tr>
-                        <th>Joined Date</th>
+                        <th>Job Added Date</th>
                         <td>October 20, 2021</td>
                     </tr>
                     <tr>
                         <th>Name</th>
-                        <td>Manzell Hatten</td>
-                    </tr>
-                    <tr>
-                        <th>Email ID</th>
-                        <td>manzellhatten@gamil.com</td>
-                    </tr>
-                    <tr>
-                        <th>Phone</th>
-                        <td>910-318-4741</td>
-                    </tr>
-                    <tr>
-                        <th>Jobs</th>
                         <td>Software Engineer</td>
                     </tr>
                 </table>
@@ -158,39 +140,27 @@
         </div>
         </div>
     </div>
-    <!-- Employee Details -->
+    <!-- Job Details -->
 
-    <!-- Edit Employee Details -->
-    <div class="modal fade" id="employee_edit_details" tabindex="-1" aria-labelledby="employee_edit_details" aria-hidden="true">
+    <!-- Edit Job Details -->
+    <div class="modal fade" id="job_edit_details" tabindex="-1" aria-labelledby="job_edit_details" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="employee_edit_details">Add Employee Details</h5>
+            <h5 class="modal-title" id="job_edit_details">Add Job Details</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form class="d-grid gap-2">
                     <div class="mb-2">
-                        <label for="employeeID" class="form-label">Date:</label>
+                        <label for="jobID" class="form-label">Date:</label>
                         <input type="text" class="form-control form-control-sm" value="October 20, 2021" required>
                     </div>
                     <div class="mb-2">
-                        <label for="name" class="form-label">Employee Name:</label>
-                        <input type="name" class="form-control form-control-sm" value="Manzell Hatten" id="employeeName" required>
+                        <label for="name" class="form-label">Job Name:</label>
+                        <input type="name" class="form-control form-control-sm" value="Software Engineer" id="jobName" required>
                     </div>
-                    <div class="mb-2">
-                        <label for="employeeID" class="form-label">Phone:</label>
-                        <input type="text" class="form-control form-control-sm" value="910-318-4741" id="employeeID" aria-describedby="employeeIDHelp">
-                    </div>
-                    <div class="mb-2">
-                        <label for="employeeEmaill" class="form-label">Email address:</label>
-                        <input type="email" class="form-control form-control-sm" value="manzellhatten@gmail.com" id="employeeEmail" aria-describedby="employeeEmailHelp">
-                    </div>
-                    <div class="mb-2">
-                        <label for="employeeID" class="form-label">Job:</label>
-                        <input type="text" class="form-control form-control-sm" value="Software Engineer" id="employeeID" aria-describedby="employeeIDHelp">
-                    </div>
-                    <button type="submit" class="btn btn-sm btn-primary">Update Employee</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Update Job</button>
                 </form>
             </div>
         </div>
